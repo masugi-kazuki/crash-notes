@@ -1,0 +1,126 @@
+\documentclass{jsarticle}
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{enumerate}
+\usepackage{mathtools}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{% hyperref
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=red,
+}
+
+\newcommand{\deq}{\coloneqq}
+\newcommand{\lquot}{\backslash}
+\newcommand{\fppflquot}[2]{(#1 \lquot #2)_\mathrm{fppf}}
+\newcommand{\FLQ}[2]{\fppflquot{#1}{#2}}
+\newcommand{\Sch}[1]{\mathsf{Sch}_{#1}}
+
+
+
+\renewcommand{\proofname}{\textbf{証明}}
+\newtheorem{bigthm}{大定理}
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{defn}[thm]{定義}
+\newtheorem{rem}[thm]{Remark}
+\usepackage[utf8]{inputenc}
+
+
+
+\title{群スキームの基礎}
+\author{馬杉和貴}
+\date{today}
+\begin{document}
+\maketitle
+
+
+
+
+Notation: スキーム $S$ について、$S$-スキームのなす圏を $\mathsf{Sch}_S$ と表記する。
+
+\tableofcontents
+
+\section{商構成}
+このセクションにおいては、群スキーム $G$ の作用をもつスキーム $X$ について、その商となるべきスキーム $X / G$ の構成を試みる。
+
+はじめに、いくつかの用語について確認する。
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$\mathrm{pr}_2 \colon G \times_S X \to X$ を第 $2$ 成分への射影とする。
+	\begin{itemize}
+		\item $\Psi_X \deq (\rho, \mathrm{pr}_2) \colon G \times_S X \to X \times_S X$ なる射について、これを $X$ に関するグラフ射とよぶ。
+		\item $X$ に関するグラフ射がスキームのモノ射であるとき、$X$ の作用について、これを categorically free であるという。
+		\item $X$ に関するグラフ射が immersion であるとき、$X$ の作用について、これを scheme-theoretically free であるという。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}\label{def_stablizer}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$T$ を $S$-スキームとして、$x$ を $X$ の $T$-点とする。このとき、$x$ の安定化群 $G_x$ を、次の方法で定義される $G \times_S T / T$ の部分関手とする。
+	\begin{itemize}
+		\item $T$-スキーム $T'$ について、$G_x(T')$ とは、$g \cdot x|_{T'} = x|_{T'}$ を充たすような $G$ 上の $T'$-点全体の集合である。
+	\end{itemize}
+\end{defn}
+
+\begin{lem}
+	定義 \ref{def_stablizer} の状況において、$G_x$ は表現可能である。
+\end{lem}
+\begin{proof}
+	$\delta_x \deq (x, x) \colon T \to X \times_S X$ とおくと、このとき、$G_x \cong T \times_{\delta_x, X \times_S X, \Psi_X} (G \times_S X)$ が成り立つ。
+\end{proof}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$\mathrm{pr}_2 \colon G \times_S X \to X$ を第 $2$ 成分への射影とする。
+	\begin{itemize}
+		\item 射 $q \colon X \to Y$ が $X$ の群作用による categorical quotient であるとは、$q$ が $\rho_X$ と $\mathrm{pr}_2$ の ($\Sch{S}$ においての) コイコライザとなることをいう。
+		\item 射 $q \colon X \to Y$ が $X$ の群作用による universal categorical quotient であるとは、任意の $S$-スキーム $S'$ について、$S'$ 上への底変換をおこなっても categorical quotient であることをいう。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。
+	\begin{itemize}
+		\item $q \colon X \to Y$ が $X$ の $G$-作用による geometric quotient であるとは、$Y$ が環付き空間としての $X$ の $G$-作用による商となっていることをいう。
+		\item $q \colon X \to Y$ が $X$ の $G$-作用による universal geometric quotient であるとは、任意の $S$-スキーム $S'$ について、$S'$ 上への底変換をおこなっても geomteric quotient であることをいう。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。このとき、$X$ の $G$-作用による naive 商とは、$S$-スキーム $T$ について集合 $G(T)\lquot X(T)$ を充てる前層のことをいう。また、$X$ の $G$-作用による fppf-商とは、naive 商として得られる前層を fppf-位相のもとで層化した fppf-層のことをいい、$\FLQ{G}{X}$ と表記する。このとき、自然な層の射 $q_{G \lquot X} \colon X \to \FLQ{G}{X}$ が存在することに注意する。また、スキームの射 $q \colon X \to Y$ が $X$ の $G$ による fppf-商であるとは、$q$ が $q_{G \lquot X}$ を表現することを指していう。また、スキーム $Y$ が $X$ の $G$ による fppf-商であるとは、$Y$ が $\FLQ{G}{X}$ を表現することを指していう。
+\end{defn}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
