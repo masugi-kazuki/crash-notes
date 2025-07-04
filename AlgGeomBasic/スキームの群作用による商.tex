@@ -1,0 +1,147 @@
+\documentclass{jsarticle}
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{enumerate}
+\usepackage{mathtools}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{% hyperref
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=red,
+}
+
+\newcommand{\deq}{\coloneqq}
+\newcommand{\lquot}{\backslash}
+\newcommand{\fppflquot}[2]{(#1 \lquot#2)_\mathrm{fppf}}
+\newcommand{\FLQ}[2]{\fppflquot{#1}{#2}}
+\newcommand{\Sch}[1]{\mathsf{Sch}_{#1}}
+
+
+
+\renewcommand{\proofname}{\textbf{証明}}
+\newtheorem{bigthm}{大定理}
+\newtheorem{thm}{定理}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{defn}[thm]{定義}
+\newtheorem{rem}[thm]{Remark}
+\usepackage[utf8]{inputenc}
+
+
+
+\title{スキームの群作用による商}
+\author{馬杉和貴}
+\date{\today}
+\begin{document}
+\maketitle
+
+Notation: スキーム $S$ について、$S$-スキームのなす圏を $\mathsf{Sch}_S$ と表記する。
+
+このノートにおいては、群スキーム $G$ の作用をもつスキーム $X$ について、その作用に関する商概念をいくつか導入する。本稿においては、その構成について取り扱うことはない。
+
+はじめに、いくつかの用語について確認する。
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$\mathrm{pr}_2 \colon G \times_S X \to X$ を第 $2$ 成分への射影とする。
+	\begin{itemize}
+		\item $\Psi_X \deq (\rho, \mathrm{pr}_2) \colon G \times_S X \to X \times_S X$ なる射について、これを $X$ に関するグラフ射とよぶ。
+		\item $X$ に関するグラフ射がスキームのモノ射であるとき、$X$ の作用について、これを categorically free であるという。
+		\item $X$ に関するグラフ射が immersion であるとき、$X$ の作用について、これを scheme-theoretically free であるという。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}\label{def_stablizer}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$T$ を $S$-スキームとして、$x$ を $X$ の $T$-点とする。このとき、$x$ の安定化群 $G_x$ を、次の方法で定義される $G \times_S T / T$ の部分関手とする。
+	\begin{itemize}
+		\item $T$-スキーム $T'$ について、$G_x(T')$ とは、$g \cdot x|_{T'} = x|_{T'}$ を充たすような $G$ 上の $T'$-点全体の集合である。
+	\end{itemize}
+\end{defn}
+
+\begin{lem}
+	定義\ref{def_stablizer} の状況において、$G_x$ は表現可能である。
+\end{lem}
+\begin{proof}
+	$\delta_x \deq (x, x) \colon T \to X \times_S X$ とおくと、このとき、$G_x \cong T \times_{\delta_x, X \times_S X, \Psi_X} (G \times_S X)$ が成り立つ。
+\end{proof}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ が左から作用する $S$-スキームとして、作用が射 $\rho_X \colon G \times_S X \to X$ によって与えられているとする。また、$\mathrm{pr}_2 \colon G \times_S X \to X$ を第 $2$ 成分への射影とする。
+	\begin{itemize}
+		\item 射 $q \colon X \to Y$ が $X$ の群作用による categorical quotient であるとは、$q$ が $\rho_X$ と $\mathrm{pr}_2$ の ($\Sch{S}$ においての) コイコライザとなることをいう。
+		\item 射 $q \colon X \to Y$ が $X$ の群作用による universal categorical quotient であるとは、任意の $S$-スキーム $S'$ について、$S'$ 上への底変換をおこなっても categorical quotient であることをいう。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。
+	\begin{itemize}
+		\item $q \colon X \to Y$ が $X$ の $G$-作用による geometric quotient であるとは、$Y$ が環付き空間としての $X$ の $G$-作用による商となっていることをいう。
+		\item $q \colon X \to Y$ が $X$ の $G$-作用による universal geometric quotient であるとは、任意の $S$-スキーム $S'$ について、$S'$ 上への底変換をおこなっても geometric quotient であることをいう。
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	$S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。このとき、$X$ の $G$-作用による naive 商とは、$S$-スキーム $T$ について集合 $G(T)\lquot X(T)$ を充てる前層のことをいう。また、$X$ の $G$-作用による fppf-商とは、naive 商として得られる前層を fppf-位相のもとで層化した fppf-層のことをいい、$\FLQ{G}{X}$ と表記する。このとき、自然な層の射 $q_{G \lquot X} \colon X \to \FLQ{G}{X}$ が存在することに注意する。また、スキームの射 $q \colon X \to Y$ が $X$ の $G$ による fppf-商であるとは、$q$ が $q_{G \lquot X}$ を表現することを指していう。また、スキーム $Y$ が $X$ の $G$ による fppf-商であるとは、$Y$ が $\FLQ{G}{X}$ を表現することを指していう。
+\end{defn}
+
+\begin{lem}
+  $S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。このとき、fppf-商構成は底変換と compatible である。すなわち、$S'$ を $S$ の $S$-スキームとするとき、$G_{S'} \deq G \times_S S'$ および $X_{S'} \deq X \times_S S'$ について、$\FLQ{G_{S'}}{X_{S'}} = \FLQ{G}{X} \times_S S' := \FLQ{G}{X}|_{S'}$ が成り立つ。 
+\end{lem}
+\begin{proof}
+  以下の証明中、ある圏の対象 $a$ に付随する表現可能関手を $h_a$ という記号で表記する。層の一般論により、$S$-上のスキーム $T$ について、表現可能関手 $h_T$ の $S'$ への引き戻しが $h_{T \times_S S'}$ に一致することがわかる。したがって、$h_G$, $h_X$, $h_{G \times_S X}$ の $S'$ への引き戻しは、それぞれ $h_{G_{S'}}$, $h_{X_{S'}}$, $h_{G_{S'} \times_{S'} X_{S'}}$ に一致する。また、引き戻し関手が圏の余極限を保つことから、$\FLQ{G}{X}$ の $S'$ への引き戻しは、$\FLQ{G_{S'}}{X_{S'}}$ に一致する。これは所望の主張である。
+\end{proof}
+
+\begin{lem}\label{fppf_quotient_free_action}
+  $S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用 $\rho$ を持つスキームとする。また、$X$ の $G$ による fppf-商 $\FLQ{G}{X}$ が $S$-スキーム $Y$ によって表現されているとする。このとき、natural quotient map $q_{G \lquot X} \colon X \to Y$ は fppf covering であり、また $X$ 上の $G$-作用が自由であるならば、自然な射 $(\rho, \mathrm{pr}_2) \colon G \times_S X \to X \times_Y X$ は同型である。
+\end{lem}
+\begin{proof}
+  $q_{G \lquot X} \colon X \to Y$ が fppf covering であることは、表現可能関手のあいだの射 $h_X \to h_Y$ が fppf 層の epimorphism であることから従う。実際、$h_X \to h_Y$ が epimorphism であることから、ある $X$ 上の fppf covering $U \to X$ が存在して、$U \to X \to Y$ なる合成が $Y$ 上の fppf covering になることがわかる。このとき、$X \to Y$ が fppf covering であることは、一般的な可換環論 (たとえば、Stacks Project, Tag \href{https://stacks.math.columbia.edu/tag/06NB}{06NB}) より従う。また、$X$ 上の $G$-作用が自由であるならば、$X$ の $G$-作用による naive 商を $(G \lquot X)_\mathrm{naive}$ と表記すると、$X$ 上の $G$-作用が自由であることから、$G \times_S X \cong X \times_{(G \lquot X)_\mathrm{naive}} X$ が成り立つ。したがって、層化をとることで、$G \times_S X \cong X \times_Y X$ が成り立つ。
+\end{proof}
+
+\begin{lem}
+  補題\ref{fppf_quotient_free_action} の状況において (特に、$X$ 上の $G$-作用が自由であるとき)、$X$ の $G$-作用による fppf-商 $\FLQ{G}{X}$ が何らかの $S$-スキームによって表現されているとき、$X$ 上の $G$-作用は scheme-theoretically free である。
+\end{lem}
+\begin{proof}
+  fppf-商 $\FLQ{G}{X}$ が $S$-スキーム $Y$ によって表現されているとする。このとき、自然な射 $(\rho, \mathrm{pr}_2) \colon G \times_S X \to X \times_Y X$ が同型であることから、かつ自然な射 $X \times_Y X \to X \times_S X$ が immersion となることに注意すれば、所望の結論を得る。
+\end{proof}
+
+ここまで定義したいくつかの商概念 (categorical, geometric, fppf) について、そのあいだの比較をおこなう。
+
+\begin{prop}
+  $S$ をスキームとして、$G$ を $S$ 上の群スキームとする。また、$X$ を $G$ の左作用を持つスキームとする。このとき、以下が成り立つ。
+  \begin{enumerate}
+    \item $X$ の $G$ 作用による geometric quotient が存在するなら、これは categorical quotient である。
+    \item $X$ の $G$ 作用による fppf-quotient が存在するなら、これは geometric quotient である。
+    \item $X$ が $S$ 上局所有限型であり、かつ $G$ が $S$ 上平坦かつ局所有限表示であるとする。さらに、$G$ の $X$ への作用が scheme-theoretically free であるとき、$X$ の $G$ による geometric quotient が存在するなら、それは fppf-quotient となる。
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  1. について、geometric quotient が存在するならば、それが categorical quotient となることは明らかである。
+
+  2. については、Anantharaman, Sivaramakrishna, ``Schémas en groupes, espaces homogènes et espaces algébriques sur une base de dimension 1", Appendix I を参照されたい。
+
+  3. については、Bas Edixhoven, Gerard van der Geer, Ben Moonen ``Abelian Varieties'', Chapter 4 を参照されたい。
+\end{proof}
+
+SGA3 において、以下の定理が示された。
+
+\begin{thm}
+  $S$ を locally Noetherian なスキームとする。また、$G$ を $S$ 上 proper flat な有限型の群スキームとして、さらに $X$ 上に $G$ の scheme-theoretically free な作用が備わっているとする。また、$X$ が $S$ 上 quasi-projective であるとする。
+  
+  以上の条件のもとに、$X$ の $G$ による fppf-quotient $\FLQ{G}{X}$ は $S$-上 separated かつ有限型なスキーム $Y$ によって表現可能であり、また商写像 $q \colon X \to Y$ は proper, of finite type かつ flat な全射である。
+\end{thm}
+
+\end{document}
