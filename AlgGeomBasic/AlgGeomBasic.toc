@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}algebraic space}{1}{section.1}%
+\contentsline {section}{\numberline {2}Picard scheme}{2}{section.2}%
+\contentsline {section}{\numberline {3}group scheme}{3}{section.3}%
+\contentsline {section}{\numberline {4}Albanese variety}{3}{section.4}%
+\contentsline {section}{\numberline {5}N\'{e}ron model}{3}{section.5}%
+\contentsline {section}{\numberline {6}Appendix: some glimpses of scheme theory}{4}{section.6}%

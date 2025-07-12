@@ -1,0 +1,98 @@
+\documentclass{jsarticle}
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{enumerate}
+\usepackage{mathtools}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{% hyperref
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=red,
+}
+
+\renewcommand{\H}{\mathrm{H}}
+\newcommand{\res}{\kappa}
+
+
+\renewcommand{\proofname}{\textbf{証明}}
+\newtheorem{bigthm}{大定理}
+\newtheorem{thm}{定理}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{defn}[thm]{定義}
+\newtheorem{rem}[thm]{Remark}
+\usepackage[utf8]{inputenc}
+
+
+
+\title{Faltings-Chai, preliminaries}
+\author{馬杉和貴}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{}
+\begin{defn}
+  アーベルスキームとは、群スキームであって、かつ smooth, proper, geometrically connected なものをいう。
+\end{defn}
+
+\begin{prop}
+  アーベルスキーム $A \to S$ は、可換群スキームである。
+\end{prop}
+\begin{proof}
+  smooth かつ proper ということから、Noetherian approximation の技術を用いて、$S$ を Noetherian の場合に帰着させることができる。これは、次の rigidity lemma によって、$S$ が体の場合に帰着される。しかしこの場合はアーベル多様体の一般論から従う。
+\end{proof}
+
+\begin{lem}
+  $S$ を connected scheme とする。$f \colon X \to Y$ なる $S$-スキームの射について、$X$ が $S$ 上 proper, flat であるとする。また、任意の $s \in S$ について、$\H^0(X_s, \mathcal{O}_{X_s}) = \res(s)$ であったとする。このとき、ある一点 $s_0 \in S$ において $f(X_s)$ が set-theoretical に一点であるならば、ある $Y \to S$ の section が存在して、$f$ はその section によって定義される。
+\end{lem}
+\begin{proof}
+  $X \to S$ なる構造射を $p$ とよぶ。descent theory の援用によって、$p$ が section $t \colon S \to X$ をもつと仮定してよい。このとき、$f \circ t \circ p : X \to S \to X \to Y$ なる方法で定義される射と、$f$ との比較をおこなう。
+
+  $S$ が一点の場合に示されたとして、以下議論を進める。$Z \subset X$ を、$f = f \circ t \circ p$ を充たす $X$ の閉部分集合とする。前提は、$s_0$ に集中する $S$ 上の Artin 閉部分スキーム $T$ について、$Z$ が $p^{-1}(T)$ を含むことを意味する。したがって、(簡単なスキーム論的考察から、)$Z$ が $X_{s_0}$ の開近傍を含むことが理解される。$p$ の properness から、これはある $s_0$ の近傍 $U$ において、$Z$ が $p^{-1}(U)$ を含むことを意味する。この議論によって、$s \in S$ であって $X_s \subset Z$ を充たすもの全体の集合を $V$ とおくと、$V$ は open であることが理解される。しかし、$p$ の flatness より、$V$ の補集合もまた open であると理解される。したがって、$S$ の連結性によって所望の結論を得る。
+
+  よって、$S$ が Artin local である場合に帰着された。section の存在を示すために、実際に section を構成する。位相空間の射としては、あたりまえのものを充てればよい。また、$t \colon S \to Y$ なる topological section について、$\mathcal{O}_Y \to t_*(\mathcal{O}_S)$ なる層の射には、$\mathcal{O}_Y \to f_*(\mathcal{O}_X) = t_*(p_*(\mathcal{O}_X)) = t_*(\mathcal{O}_S)$ として得られるものを充てる。この方法によって得られた環付き空間の射は、スキームの射となっており、また所望の条件を充たす。
+\end{proof}
+
+\newpage
+\begin{thm}
+  $A \to S$ をアーベルスキームとする。$\mathcal{L}$ を $A$ 上の line bundle とする。$I \subset \{1, 2, 3\}$ について、$m_I \colon A \times_S A \times_S A \to A$ を、「$I$ に属するラベルの成分をすべて足しあわせる」射として定める。このとき、
+  \[
+    \Theta(\mathcal{L}) := \otimes_{I \subset \{1, 2, 3\}} m_I^*(\mathcal{L}^{\otimes (-1)^{|I|}})
+  \]
+  とすると、$\Theta(\mathcal{L})$ は $A$ 上の trivial line bundle と canonically に同型である。
+\end{thm}
+\begin{proof}
+  $S$ が体の場合については、アーベル多様体の一般論から従う。一般の場合には、semicontinuity に関する議論によって、$\Theta(\mathcal{L})$ が $S$ 上の line bundle を引き戻した line bundle と同型であることが理解されるが、$A \times_S A \times_S A$ の zero section 上において、$\Theta(\mathcal{L})$ が (canonically に) trivial であることが従う。よって、lこれらのことから所望の結論を得る。
+\end{proof}
+
+\begin{defn}
+  アーベルスキーム $A \to S$ について、その zero section を $e$ とおく。$A$ 上の line bundle $\mathcal{L}$ に対して、$\mathcal{L}$ の rigidification とは、$\mathcal{O}_S \to e^*(\mathcal{L})$ なる同型射のことをいう。
+\end{defn}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+

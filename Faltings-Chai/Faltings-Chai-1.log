@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.uptex) (TeX Live 2025) (preloaded format=uplatex 2025.7.2)  11 JUL 2025 15:27
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.uptex) (TeX Live 2025) (preloaded format=uplatex 2025.7.2)  11 JUL 2025 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/kazukimasugi/Desktop/crash-notes/AlgGeomBasic/群スキームの基礎
-(/Users/kazukimasugi/Desktop/crash-notes/AlgGeomBasic/群スキームの基礎.tex
+**/Users/kazukimasugi/Desktop/crash-notes/Faltings-Chai/Faltings-Chai-1
+(/Users/kazukimasugi/Desktop/crash-notes/Faltings-Chai/Faltings-Chai-1.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
@@ -522,122 +522,112 @@ File: l3backend-dvips.def 2025-06-09 L3 backend support: dvips
 \g__pdfannot_backend_int=\count337
 \g__pdfannot_backend_link_int=\count338
 \g__pdfannot_backend_link_sf_int=\count339
-)
-No file 群スキームの基礎.aux.
-\openout1 = `群スキームの基礎.aux'.
+) (./Faltings-Chai-1.aux)
+\openout1 = `Faltings-Chai-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-Package hyperref Info: Link coloring ON on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+Package hyperref Info: Link coloring ON on input line 44.
+ (./Faltings-Chai-1.out) (./Faltings-Chai-1.out)
 \@outlinefile=\write4
-\openout4 = `群スキームの基礎.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
+\openout4 = `Faltings-Chai-1.out'.
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 44.
+(Font)              scaled to size 15.9785pt on input line 46.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 44.
+(Font)              scaled to size 15.9785pt on input line 46.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 44.
+(Font)              scaled to size 11.09619pt on input line 46.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 44.
+(Font)              scaled to size 11.09619pt on input line 46.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 44.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+(Font)              scaled to size 5.5481pt on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 48.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 48.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 59.
+(Font)              scaled to size 13.31541pt on input line 47.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 59.
+(Font)              scaled to size 13.31541pt on input line 47.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 59.
+(Font)              scaled to size 13.31541pt on input line 47.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 59.
+(Font)              scaled to size 13.31541pt on input line 47.
 LaTeX Font Info:    Font shape `JT2/mc/m/it' in size <10> not available
-(Font)              Font shape `JT2/mc/m/n' tried instead on input line 63.
+(Font)              Font shape `JT2/mc/m/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 63.
+(Font)              scaled to size 9.24683pt on input line 48.
 LaTeX Font Info:    Font shape `JY2/mc/m/it' in size <10> not available
-(Font)              Font shape `JY2/mc/m/n' tried instead on input line 63.
+(Font)              Font shape `JY2/mc/m/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 63.
+(Font)              scaled to size 9.24683pt on input line 48.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 64.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 64.
+(Font)              scaled to size 9.24683pt on input line 49.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 64.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 64.
+(Font)              scaled to size 9.24683pt on input line 49.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 53.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 53.
 LaTeX Font Info:    Font shape `JT2/mc/bx/it' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 67.
+(Font)              scaled to size 9.24683pt on input line 56.
 LaTeX Font Info:    Font shape `JY2/mc/bx/it' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 67.
+(Font)              scaled to size 9.24683pt on input line 56.
 
 
 [1
 
 ]
 
-[2] (./群スキームの基礎.aux)
+[2] (./Faltings-Chai-1.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `群スキームの基礎.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `群スキームの基礎.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B55A52E899475F8FFFDB601311F22D77;264.
+Package rerunfilecheck Info: File `Faltings-Chai-1.out' has not changed.
+(rerunfilecheck)             Checksum: 278C679CEEB48B60E26C9E00639F80B6;109.
  ) 
 Here is how much of TeX's memory you used:
  22075 strings out of 468532
- 419344 string characters out of 5449414
- 834176 words of memory out of 5000000
- 50283 multiletter control sequences out of 15000+600000
- 695961 words of font info for 114 fonts, out of 8000000 for 9000
+ 419388 string characters out of 5449414
+ 833198 words of memory out of 5000000
+ 50282 multiletter control sequences out of 15000+600000
+ 694721 words of font info for 110 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 102i,6n,107p,641b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,6n,107p,1008b,515s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 群スキームの基礎.dvi (2 pages, 18252 bytes).
+Output written on Faltings-Chai-1.dvi (2 pages, 17856 bytes).

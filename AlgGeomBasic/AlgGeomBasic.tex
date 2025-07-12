@@ -1,0 +1,71 @@
+\documentclass{jsarticle}
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{1}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{enumerate}
+\usepackage{mathtools}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{% hyperref
+setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=red,
+}
+
+\input{macros.tex}
+
+
+\renewcommand{\proofname}{\textbf{証明}}
+\newtheorem{bigthm}{大定理}
+\newtheorem{thm}{定理}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{defn}[thm]{定義}
+\newtheorem{rem}[thm]{Remark}
+\usepackage[utf8]{inputenc}
+
+
+
+\title{AlgGeomBasic}
+\author{馬杉和貴}
+\date{\today}
+\begin{document}
+\maketitle
+
+このノートは、著者の研究活動上のメモ・備忘録としての側面をもつものである。著者は (執筆時点においては) 遠アーベル幾何学を専攻する修士課程の学生である。したがって、内容については、遠アーベル幾何学を習得するにあたって必要となった、代数幾何学に関する (一般的な) 基礎事項をまとめたものとなる。
+
+\tableofcontents
+
+\section{algebraic space}
+
+\newpage
+\section{Picard scheme}
+
+\input{PicardScheme.tex}
+
+\newpage
+\section{group scheme}
+
+\section{Albanese variety}
+
+\section{N\'{e}ron model}
+
+\newpage
+\section{Appendix: some glimpses of scheme theory}
+\input{SchemeTheory.tex}
+
+
+
+
+\end{document}
