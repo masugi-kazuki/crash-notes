@@ -28,11 +28,12 @@ setpagesize=false,
 
 \renewcommand{\proofname}{\textbf{証明}}
 \newtheorem{bigthm}{大定理}
-\newtheorem{thm}{定理}
+\newtheorem{thm}{定理}[section]
 \newtheorem{prop}[thm]{命題}
 \newtheorem{lem}[thm]{補題}
 \newtheorem{defn}[thm]{定義}
 \newtheorem{rem}[thm]{Remark}
+\newtheorem{note}[thm]{補足}
 \usepackage[utf8]{inputenc}
 
 
@@ -43,11 +44,16 @@ setpagesize=false,
 \begin{document}
 \maketitle
 
-このノートは、著者の研究活動上のメモ・備忘録としての側面をもつものである。著者は (執筆時点においては) 遠アーベル幾何学を専攻する修士課程の学生である。したがって、内容については、遠アーベル幾何学を習得するにあたって必要となった、代数幾何学に関する (一般的な) 基礎事項をまとめたものとなる。
+このノートは、著者の研究活動上のメモ・備忘録としての側面をもつものである。著者は (執筆時点においては) 遠アーベル幾何学を専攻する修士課程の学生である。したがって、内容については、遠アーベル幾何学を習得するにあたって必要となった、代数幾何学に関する (一般的な) 基礎事項をまとめたものとなる。また、スキーム論についての記述がいくらか大雑把なものとなることがあるが、これは内容の不正確性あるいは informality をいうものではない (同時に、一応 Appendix としてスキーム論の記述を設けているが、必ずしも参照をおこなうとは限らず、むしろことわりなく内容を用いることが多い)。あるいは本記事の読みやすさ・理解しやすさについては、(もちろん目的に付随して一定の配慮はめざすところではあるものの) 保証するものではない。
 
 \tableofcontents
-
+\newpage
 \section{algebraic space}
+
+\newpage
+\section{group scheme}
+
+\input{GroupScheme.tex}
 
 \newpage
 \section{Picard scheme}
@@ -55,15 +61,20 @@ setpagesize=false,
 \input{PicardScheme.tex}
 
 \newpage
-\section{group scheme}
+\section{Jacobian scheme}
 
+
+\newpage
 \section{Albanese variety}
 
+\newpage
 \section{N\'{e}ron model}
 
 \newpage
 \section{Appendix: some glimpses of scheme theory}
 \input{SchemeTheory.tex}
+
+\newpage{Appendix: algebraic stack}
 
 
 

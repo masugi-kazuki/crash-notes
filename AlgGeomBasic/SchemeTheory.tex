@@ -7,16 +7,29 @@
         \item $S_i$ は $\mathbb{Z}$ 上有限型である。
         \item $S = \lim S_i$ が成り立つ。
       \end{itemize}
-    \item $f \colon X \to S$ を qcqs morphism とする。このとき、ある scheme の射の逆系 $\{f_i \colon X_i \to S_i, p_{X, i, i'}, p_{S, i, i'}\}$ が存在して、以下の条件を充たす。
+    \item $f \colon X \to S$ を qcqs morphism とする。このとき、ある scheme の射の逆系 $\{f_i \colon X_i \to S_i, p_{X, i, i'}, p_{S, i, i'}\_{i, i' \in I}$ が存在して、以下の条件を充たす。
       \begin{itemize}
         \item 構造射 $p_{X, i, i'}$, $p_{S, i, i'}$ は affine である。
         \item $X_i$, $S_i$ は $\mathbb{Z}$ 上有限型である。
         \item $X \to S = \lim X_i \to S_i$ が成り立つ。
       \end{itemize}
-    \item $f \colon X \to S$
+    \item $f \colon X \to S$ を scheme の射とする。また、$S$ を quasi-compact, $X$ を qcqs とする。このとき、ある $S$-scheme の逆系 $\{X_i, p_{i, i'}\}_{i, i' \in I}$ が存在して、以下の条件を充たす。
+    \begin{itemize}
+      \item 構造射 $p_{i, i'}$ は affine である。
+      \item $X_i$ は $S$ 上有限表示である。
+      \item $X = \lim X_i$ が成り立つ。
+    \end{itemize}
   \end{enumerate}
 \end{prop}
 
 \begin{prop}[Stein 分解]
-  $f \colon X \to S$ を proper, of finite presentation
+  $f \colon X \to S$ を proper, of finite presentation とする。このとき、ある $f$ の射分解 $X \to T \to S$ が存在して、$X \to T$ が geometrically connected, $T \to S$ が integral であるようにできる。
 \end{prop}
+\begin{proof}
+  まず、$S$ を affine と仮定してよい。Noetherian approximation の議論によって、$X$ を近似する scheme の列 $X_i$ をとることができる。このとき、各 $X_i \to S$ に対して Stein 分解を実行して、$X_i \to T_i \to S$ なる射分解を得る。このとき、$T = \lim T_i$ とすると、$T \to S$ は明らかに integral である。さらに、$X_i \to T_i$ は geometrically connected であって、かつ $X \to T$ は射 $X_i \to T_i$ の極限であるため、$X \to T$ もまた geometrically connected である。
+\end{proof}
+
+\begin{prop}
+  
+\end{prop}
+

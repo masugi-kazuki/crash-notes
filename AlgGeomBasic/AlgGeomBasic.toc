@@ -1,6 +1,26 @@
-\contentsline {section}{\numberline {1}algebraic space}{1}{section.1}%
-\contentsline {section}{\numberline {2}Picard scheme}{2}{section.2}%
-\contentsline {section}{\numberline {3}group scheme}{3}{section.3}%
-\contentsline {section}{\numberline {4}Albanese variety}{3}{section.4}%
-\contentsline {section}{\numberline {5}N\'{e}ron model}{3}{section.5}%
-\contentsline {section}{\numberline {6}Appendix: some glimpses of scheme theory}{4}{section.6}%
+\contentsline {section}{\numberline {1}algebraic space}{2}{section.1}%
+\contentsline {section}{\numberline {2}group scheme}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}base 上 geometrically reduced な平坦群スキームは smooth である}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}標数 $0$ のスキーム上の平坦群スキームは smooth である}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}アーベルスキームは可換群スキームである}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}連結成分}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Cohen-Macaulay 性}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}次元等式}{5}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}群スキームに関するスキーム論的補題}{5}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}商構成}{5}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}可換群スキームのなす圏はアーベル圏である}{5}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Chevalley の定理}{5}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}semi-abelian scheme の subquotient は semi-abelian である}{5}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}semi-abelian scheme の Galois covering は semi-abelian scheme である}{5}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Picard scheme}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}全般的事項}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mumford による反例}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}scheme による表現可能性}{10}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}関手 $\mathrm {Div}_{X / S}$}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}$\mathrm {Div}_{X / S}$ の表現可能性}{11}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}$\mathrm {Pic}_{X / S}$ の表現可能性}{11}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}algebraic space による表現可能性}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Jacobian scheme}{12}{section.4}%
+\contentsline {section}{\numberline {5}Albanese variety}{13}{section.5}%
+\contentsline {section}{\numberline {6}N\'{e}ron model}{14}{section.6}%
+\contentsline {section}{\numberline {7}Appendix: some glimpses of scheme theory}{15}{section.7}%

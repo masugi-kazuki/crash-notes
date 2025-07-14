@@ -1,0 +1,117 @@
+この section においては、群スキームに関する基本的な事実とその証明を列挙的にまとめる。内容構成は、したがって、特に非体系的である。
+
+以下、次の notation を以下固定し、特別の言及のない限りは、文脈はこの notation に従うものとする:
+\begin{itemize}
+  \item $S$ は scheme とする。
+  \item $G$ は $S$-group scheme とする。
+  \item $\mu_G$ (あるいは文脈上明らかな場合は $\mu$) は $G$ の乗法射を表す。
+  \item $1_G$ (あるいは文脈上明らかな場合は $1$) は $G$ の単位元を表す。
+  \item $i_G$ (あるいは文脈上明らかな場合は $i$) は $G$ の逆射を表す。
+  \item $k$ は体とする。
+  \item $A$, $R$ は環であるとする。
+\end{itemize}
+
+\subsection{base 上 geometrically reduced な平坦群スキームは smooth である}
+base 上 geometrically reduced な平坦群スキーム $G / S$ が smooth であることをみる。このためには、(flatness より) fiberwise に確認すればよいため、base $S$ を代数閉体 $k$ としてよい。このとき、reducedness の仮定より、$G$ は generically smooth である。このとき、適当な閉点のもとでの平行移動をおこなうことによって、$G$ が smooth であることが理解される。
+
+\subsection{標数 $0$ のスキーム上の平坦群スキームは smooth である}
+さきと同様の帰着の方法によって、標数 $0$ の代数閉体 $k$ 上で議論をおこなえばよい。
+
+群スキーム $G / k$ について、その微分加群 $\Omega_{G / k}$ は locally free であるから、これは $G$ の smoothness をみちびく (これは、Stacks Project, Tag 04QN などを参照されたい)。
+
+\subsection{アーベルスキームは可換群スキームである}
+\begin{defn}
+  アーベルスキームとは、群スキームであって、かつ smooth, proper, geometrically connected なものをいう。
+\end{defn}
+
+\begin{prop}
+  アーベルスキーム $A \to S$ は、可換群スキームである。
+\end{prop}
+\begin{proof}
+  smooth かつ proper ということから、Noetherian approximation の技術を用いて、$S$ を Noetherian の場合に帰着させることができる。これは、次の rigidity lemma によって、$S$ が体の場合に帰着される。しかしこの場合はアーベル多様体の一般論から従う。
+\end{proof}
+
+\begin{lem}
+  $S$ を connected scheme とする。$f \colon X \to Y$ なる $S$-スキームの射について、$X$ が $S$ 上 proper, flat であるとする。また、任意の $s \in S$ について、$\H^0(X_s, \mathcal{O}_{X_s}) = \res(s)$ であったとする。このとき、ある一点 $s_0 \in S$ において $f(X_s)$ が set-theoretical に一点であるならば、ある $Y \to S$ の section が存在して、$f$ はその section によって定義される。
+\end{lem}
+\begin{proof}
+  $X \to S$ なる構造射を $p$ とよぶ。descent theory の援用によって、$p$ が section $t \colon S \to X$ をもつと仮定してよい。このとき、$f \circ t \circ p : X \to S \to X \to Y$ なる方法で定義される射と、$f$ との比較をおこなう。
+
+  $S$ が一点の場合に示されたとして、以下議論を進める。$Z \subset X$ を、$f = f \circ t \circ p$ を充たす $X$ の閉部分集合とする。前提は、$s_0$ に集中する $S$ 上の Artin 閉部分スキーム $T$ について、$Z$ が $p^{-1}(T)$ を含むことを意味する。したがって、(簡単なスキーム論的考察から、) $Z$ が $X_{s_0}$ の開近傍を含むことが理解される。$p$ の properness から、これはある $s_0$ の近傍 $U$ において、$Z$ が $p^{-1}(U)$ を含むことを意味する。この議論によって、$s \in S$ であって $X_s \subset Z$ を充たすもの全体の集合を $V$ とおくと、$V$ は open であることが理解される。しかし、$p$ の flatness より、$V$ の補集合もまた open であると理解される。したがって、$S$ の連結性によって所望の結論を得る。
+
+  よって、$S$ が Artin local である場合に帰着された。section の存在を示すために、実際に section を構成する。位相空間の射としては、あたりまえのものを充てればよい。また、$t \colon S \to Y$ なる topological section について、$\mathcal{O}_Y \to t_*(\mathcal{O}_S)$ なる層の射には、$\mathcal{O}_Y \to f_*(\mathcal{O}_X) = t_*(p_*(\mathcal{O}_X)) = t_*(\mathcal{O}_S)$ として得られるものを充てる。この方法によって得られた環付き空間の射は、スキームの射となっており、また所望の条件を充たす。
+\end{proof}
+
+\subsection{連結成分}
+\begin{prop}
+  $k$ を体、$S$ を $\Spec k$ とする。$G$ を connected $S$-group scheme とする。このとき、$G$ は geometrically connected である。
+\end{prop}
+\begin{proof}
+  $G$ が $S$ 上の rational point をもつ (単位元 $1_G$ は rational point である ( ! )) ことに注意すれば、scheme 論の簡単な exercise である。
+\end{proof}
+
+\begin{lem}
+  $k$ を体、$S$ を $\Spec k$ とする。$G$ を $S$ 上 locally of finite type な $S$-group scheme とする。このとき、$G$ の単位元を含む連結成分は clopen subgroup となる。
+\end{lem}
+\begin{proof}
+  $G$ は locally Noetherian, 特に locally connected であるため、任意の連結成分は open である。したがって、補題は明らかである。
+\end{proof}
+
+\begin{lem}
+  $k$ を体、$S$ を $\Spec k$ とする。$G$ の単位元を含む連結成分は closed subgroup となる。
+\end{lem}
+\begin{proof}
+  明らかである。
+\end{proof}
+
+\begin{prop}
+  $k$ を体、$S$ を $\Spec k$ とする。$G$ を $S$ 上 locally of finite type な $S$-group scheme とする。このとき、$G$ の連結成分はいずれも geometrically irreducible, of finite type であり、かつすべておなじ次元をもつ。
+\end{prop}
+\begin{proof}
+  $G$ の単位元をふくむ連結成分を $G_0$ とよぶ。このとき、命題のすべての主張は、$G_0$ の場合に帰着される。したがって、以下 $G$ を connected として議論をおこなう。
+
+  $G$ が irreducible であることをみるためには、$k$ を代数閉体としてよい。このとき、$G$ の被約化 $G_\mathrm{red}$ もまた $k$ 上の群スキームとなるが、これは smooth である。よって、$G$ の下部位相空間は $G_\mathrm{red}$ の下部位相空間と標準的に同相であるから、これは $G$ の irreducible をみちびく。
+
+  $G$ の of finite type 性のためには、$G$ が quasi-compact であることをみればよいが、これは次の scheme 論的な補題によって確認できる。
+\end{proof}
+
+\begin{lem}
+  $k$ を体、$S$ を $\Spec k$ とする。$G$ を $S$-group scheme とする。このとき、$U$, $V$ が $G$ の dense open subset であるならば、$\mu|_{U \times_S V} \colon U \times_S V \to G$ は surjective である。
+\end{lem}
+\begin{proof}
+  (体拡大が universally open であること、あるいは平行移動に関するトリックなどをおもいだせば、) $\mu|_{U \times_S V}$ の像が単位元 $1$ を含んでいることを確認すればよいことが理解される。しかし、$U$, $V$ が dense open subset であることから、特に $U \cap V^{-1}$ は非空な交差をもつ。したがって、これは補題を示す。
+\end{proof}
+
+\subsection{Cohen-Macaulay 性}
+\begin{prop}
+  $G$ を $A$ 上の局所有限表示平坦群スキームとする。このとき、$G$ は Cohen-Macaulay であり、さらに、任意の点 $x \in G$ について $\mathcal{O}_{G, x}$ のパラメータ系 $a_1, \ldots, a_n$ であって $\O_{G, x} / (a_1, \ldots, a_n)$ が $A$ 上有限自由加群となるようなものが存在する。
+\end{prop}
+\begin{proof}
+  これらの主張は、$A$ がその剰余体である場合に帰着できる。また、体 $k$ 上本質的に有限型の環 $A$ に対して、その Cohen-Macaulay 性は、$k$ の有限拡大体 $K$ に対する $A \otimes_k K$ の Cohen-Macaulay 性と同値である。このことに着目すれば、平行移動に関するトリックを用いて、ある閉点に対してその Cohen-Macaulay 性を確認すればよい。しかしこのことは、次の一般的なスキーム論の補題により確認される。
+\end{proof}
+
+\begin{lem}
+  体 $k$ 上の非空な局所有限型スキーム $X$ について、ある閉点 $x \in X$ が存在して、$\O_{X, x}$ は Cohen-Macaulay である。
+\end{lem}
+\begin{proof}
+  $X$ を affine 開集合に取り替えてよい。$X = \Spec(B)$ として、$B$ の次元に関する induction をまわす。$\dim B = 0$ のときは明らかである。
+
+  $\dim B > 0$ のとき、$B$ の非単元であって、かつ非零因子であるような元が存在するため (仮定を用いている)、そのような元 $f \in B$ をとる。$B / (f)$ の次元は $B$ の次元よりも小さいので、帰納法の仮定により、ある閉点 $y \in \Spec(B / (f))$ が存在して、$\O_{\Spec(B / (f)), y}$ は Cohen-Macaulay である。ここで、$y$ を $X$ に引き戻すと、$\O_{X, y}$ は Cohen-Macaulay であることがわかる。
+\end{proof}
+
+\subsection{次元等式}
+
+\subsection{群スキームに関するスキーム論的補題}
+
+
+\subsection{商構成}
+
+
+\subsection{可換群スキームのなす圏はアーベル圏である}
+
+\subsection{Chevalley の定理}
+
+\subsection{semi-abelian scheme の subquotient は semi-abelian である}
+
+\subsection{semi-abelian scheme の Galois covering は semi-abelian scheme である}
+

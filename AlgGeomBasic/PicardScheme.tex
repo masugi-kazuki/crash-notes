@@ -1,3 +1,4 @@
+\subsection{全般的事項}
 scheme $X$ について、$\Pic(X)$ は $X$ 上の line bundle の同型類全体のなすアーベル群として定められる。ここで、自然に $\Pic(X) \cong \H^1(X, \O_X^\times)$ なる同型が与えられる。
 
 scheme $S$ を以下固定する。$S$-scheme $X$ について、次の方法で $\Sch_S$ 上の前層を与えることができる:
@@ -7,6 +8,202 @@ scheme $S$ を以下固定する。$S$-scheme $X$ について、次の方法で
 
 この方法によって構成される関手を、$X / S$ に関する \textbf{naive relative Picard functor}（素朴 Picard 関手）と呼ぶ。また、naive relative Picard functor を fppf-位相のもとで層化した関手を $\Pic_{X / S}$ と表記し、これを \textbf{relative Picard functor}（相対 Picard 関手）と呼ぶ。$S$-scheme としての構造射を $\pi \colon X \to S$ とおくと、明らかに、$\Pic_{X / S}$ は $\R^1\pi_*(\Gm)$ として表示される (ここで、pushforward は fppf-位相のもとで計算している)。
 
-\begin{lem}
-  
+まず、(line bundle によって与えられる - すなわち、naive relative Picard functor 由来である) $\Pic_{X / S}$ の元が、自明化するための条件について確認する。
+
+\begin{lem}\label{Lem:Triviality_ElemPicFunc}
+  $f \colon X \to S$ を proper, of finite presentation な scheme の射とする。このとき、$X$ 上の line bundle $\L$ によってあらわされる $\Pic_{X / S}(S)$ の元 $[\L]$ について、以下は同値となる。
+  \begin{enumerate}
+    \item $[\L] = 0 \in \Pic_{X / S}(S)$.
+    \item $\L$ は $S$ 上 Zariski local に trivial である (すなわち、ある $S$ の (Zariski) open covering $\{U_i\}_{i \in I}$ が存在して、各 $i$ に対して $\L|_{X \times_S U_i} \cong \O_{X \times_S U_i}$ が成り立つ)。
+  \end{enumerate}
 \end{lem}
+\begin{proof}
+  2. $\THEN$ 1. は明らかである。よって、以下 1. $\THEN$ 2. を示す。
+
+  $f$ の Stein 分解 $X \to T \to S$ をとる。射 $X \to T$ を $g$ とよぶとき、自然な射 $\psi \colon g^*g_*\L \to \L$ が同型となることをみる。仮定より、$\L$ は $S$ 上 fppf-local に trivial である。したがって、$\psi$ の同型性を確認するには、(加群の射の同型が faithfully flat 射のもとで降下することから、) $\L$ が trivial であるときに示せば充分である。このとき、semicontinuity に関する議論により、$g_*\O_X = \O_T$ が成り立つ。このことから、$\psi$ の同型性が示される。
+
+  よって、$T$ 上の line bundle $\L_T = g_*\L$ が $S$ について Zariski local に trivial であることを示せばよいが、ふたたび limit argument によって、$T \to S$ を finite であるとしてよい ($T$ についてのStein 分解に関する文脈を解除する)。しかし、この場合は標準的なスキーム論の議論により理解される (本質的には、semi-local ring 上の line bundle が常に trivial であることに依る)。
+\end{proof}
+
+Leray spectral sequence をみることで、$f \colon X \to S$ なる scheme の射について、次の標準的な完全列を得る: \[0 \to \H^1(S, f_*\Gm) \to \H^1(X, \Gm) \to \Pic_{X / S}(S) \to \H^2(S, f_*\Gm) \to \H^2(X, \Gm).\]
+
+このとき、さらに $f_*\O_X = \O_S$ が成り立つとき (たとえば、$f$ が proper かつ geometrically integral なとき)、$f_*\Gm = \GmS$ が成り立つことから、さきの完全列は次のように rewrite できる: \[0 \to \Pic(S) \to \Pic(X) \to \Pic_{X / S}(S) \to \Br(S) \to \Br(X).\] ここで、$\Br(-)$ なる記号は (スキームに関する) Brauer 群を表すものとする。あるいは (言い換えれば)、さきの完全列により、$\Pic_{X / S}(S)$ の元が $X$ 上の line bundle から生じるための障害が、$\Br(S)$ のなかにあらわれることが理解される。特に、$\Br(S)$ が消失するとき、あるいは $\Br(S) \to \Br(X)$ が単射となるとき (たとえば $X \to S$ が section をもつとき、これは可能である)、この種類の障害は消失する。
+
+\begin{note}
+  $S = \Spec R$ を affine scheme とする。このとき、以下の状況においては $\Br(S) = 0$ が成り立つ:
+  \begin{itemize}
+    \item $R$ が separably closed field であるとき。
+    \item $R$ が strictly henselian DVR の商体であるとき (さきの条件の一般化である)。
+    \item $R$ が strictly henselian valuation ring であるとき。
+  \end{itemize}
+  このことについて、ここでは証明を与えない。
+\end{note}
+
+\begin{defn}[Stein-good]
+  $f \colon X \to S$ を scheme の射とする。このとき、$f$ が \textbf{quasi-Stein-good} であるとは、自然な射 $\mathcal{O}_S \to f_*\O_X$ が同型であることをいう。また、$f$ が \textbf{universally quasi-Stein-good} であるとは、任意の $S$-scheme $T$ に対して、$f$ の base change $f_T \colon X \times_S T \to T$ が quasi-Stein-good であることをいう。$f$ が \textbf{Stein-good} であるとは、$f$ が quasi-Stein-good かつ proper, of finite presentation であることをいう。同様に、$f$ が \textbf{universally Stein-good} であるとは、universally quasi-Stein-good かつ proper, of finite presentation であることをいう。
+\end{defn}
+
+さきの議論により、次のような要約が可能となる。
+
+\begin{prop}\label{Prop:Rep_PicFunc}
+  $f \colon X \to S$ を quasi-Stein-good (resp. universally quasi-Stein-good) な scheme の射とする。このとき、以下が成り立つ: 任意の $S$-flat scheme $T$ に対して (resp. 任意の $S$-scheme $T$ に対して)、次の完全列を得る: \[0 \to \Pic(T) \to \Pic(X \times_S T) \to \Pic_{X / S}(T) \to \Br(T) \to \Br(X \times_S T).\] さらに、$f$ が section をもつとき、次の短完全列を得る: \[0 \to \Pic(T) \to \Pic(X \times_S T) \to \Pic_{X / S}(T) \to 0.\]
+\end{prop} 
+\begin{proof}
+  既におこなった議論のなかで示された。
+\end{proof}
+
+\begin{note}
+  ここでは fppf-topology のもとで議論をおこなったが、さきの命題 (\ref{Prop:Rep_PicFunc}) の内容は (同様の議論のもとで、あるいは適切な修正のもとで) 他の topology (Zariski, \'{e}tale, fpqc ...) のもとでも成り立つ。特に、次の事実が成り立つ: $f \colon X \to S$ を universally quasi-Stein-good な fppf-morphism とすると、$\Pic_{X / S}$ は fpqc-topology のもとでも sheaf である。実際、$\Pic_{X / S}$ を $f \colon X \to S$ のもとで引き戻すと、さきの命題よりこれは fpqc-topology のもとでも sheaf となる。このとき、sheaf の一般論より、$\Pic_{X / S}$ が fpqc-topology のもとでも sheaf となることが理解される。
+\end{note}
+
+次に、Picard scheme に関してより詳細な議論をおこなうために、rigidification の概念、あるいは rigidificator の概念を導入する。
+
+$f \colon X \to S$ が quasi-Stein-good かつ section $s \colon S \to X$ をもつとき、さきの命題によって $\Pic_{X / S}(T) = \Pic(X \times_S T) / \Pic(T)$ となることが理解されたが、これは次の述べる議論によっても理解される。まず、$\xi \in \Pic_{X / S}(T)$ なる元について、これは $T$ 上 fppf-local には line bundle によって表示される。$T' \to T$ なる fppf-covering, $\L \in \Pic(X \times_S T')$ をその witness としてとる。このとき、$\Pic(T')$ の元は $\Pic_{X / S}(T')$ においては消失するため、$\L$ が次の条件を充たすようにできる: $s|_{T'}$ を $s$ の $T'$ への base change として得られる section $T' \to X \times_S T'$ とするとき、$s|_{T'}^*\L \cong \O_{T'}$ が成り立つ。ここで、以降の議論のために、$\alpha \colon \O_{T'} \cong s|_{T'}^*\L$ なる同型をひとつ固定する。このとき、補題 \ref{Lem:Triviality_ElemPicFunc} を振り返れば、($\alpha$-canonical な方法で) $T' \times_T T'$ 上の line bundle の同型 $\mathrm{pr}_1^*\L \cong \mathrm{pr}_2^*\L$ を構成でき、またこれが cocycle condition を充たすことも容易に確認できる。したがって、$\L$ は $T$ 上に descent する - この方法によって得られる line bundle を $\overline{\L}$ と表記すると、$\xi = [\overline{\L}]$ が成り立つことが理解される。よって、$\Pic(X \times_S T) \to \Pic_{X / S}(T)$ の surjectivity が確認できる。次に、$\Pic(X \times_S T) \to \Pic_{X / S}(T)$ の kernel が $\Pic(T)$ と一致することをみる - section の存在により、$\Pic(T) \to \Pic(X \times_S T)$ が injective であることは明らかである。また、$\L \in \Pic(X \times_S T)$ が $\Pic_{X / S}(T)$ において消失するとき、$\L$ を適切に $\Pic(T)$ の元による twist ととりかえれば、section $s|_{T}$ によって引き戻した line bundle $\L|_{T}$ が trivial となるようにできる。このとき、ふたたび補題 \ref{Lem:Triviality_ElemPicFunc} を振り返れば、$\L$ が trivial bundle となることが理解される。よって、所望の結論が得られた。
+
+この議論をもとに、次の定義のもとで rigidification, あるいは rigidificator の概念を導入する。
+
+\begin{defn}[rigidification]
+  $f \colon X \to S$ を quasi-Stein-good かつ section $s \colon S \to X$ をもつ scheme の射とする。このとき、$X$ 上の line bundle $\L$ について、$\L$ の ($s$ に沿った) \textbf{rigidification} とは、$\alpha \colon \O_S \cong s^*\L$ なる同型のことをいう。
+\end{defn}
+
+\begin{defn}[rigidificator]
+  $f \colon X \to S$ を proper, flat, of finite presentation な scheme の射とする。このとき、$X$ の subscheme $Y$ が $f$ についての \textbf{rigidificator} であるとは、次の条件を充たすことをいう:
+  \begin{itemize}
+    \item $Y$ は $S$ 上 finite, flat, of finite presentation である。
+    \item 任意の $S$-scheme $T$ に対して、自然な射 $\GSec(Y \times_S T) \to \GSec(X \times_S T)$ が単射である。
+  \end{itemize}
+\end{defn}
+
+\begin{note}
+  $f$ が universally Stein-good かつ flat であるとき、任意の $f$ の section $s$ は $f$ についての rigidificator となることがただちに理解される。
+\end{note}
+
+$f \colon X \to S$ を proper, flat, of finite presentation な scheme の射として、また $Y$ を $f$ についての rigidificator とする。このとき、$\RPic_{X / S, Y}$ を、$S$-scheme $T$ について、$X \times_S T$ 上の line bundle $\L$ と $\alpha \colon \L|_{Y \times_S T} \cong \O_{Y \times_S T}$ なる同型の組のなす加群を充てる関手とする。
+
+このとき、注意すべきこととして、rigidify された line bundle は、非自明な自己同型をもたないことが理解される。このことによって、「同型類」という枠組みを導入するうえで起こる (非自明な自己同型の存在に起因する) 不定性を、rigidified category において除去することができる。このことから、特に rigidified line bundle に関する descent theory が可能となり、したがって $\RPic_{X / S, Y}$ は fpqc-topology のもとで sheaf となることが理解される。
+
+以下、$\RPic_{X / S, Y}$ と $\Pic_{X / S}$ とのあいだの関連をみる目的で、EGA III の内容についての復習をおこなう。
+
+\begin{defn}
+  $f \colon X \to S$ を proper, of finite presentation な scheme の射とし、また $\modF$ を $X$ 上 locally of finite presentation かつ $S$-flat な加群とする。このとき、$\modF$ が \textbf{cohomologically flat in dimension 0} であるとは、任意の $S$-scheme $T$ に対して、$(f_T)_*\modF|_{X \times_S T}$ が $(f_*\modF)|_{X \times_S T}$ に自然に同型であることをいう。また、$\O_X$ が cohomologically flat であるとき、$f$ を \textbf{cohomologically flat in dimension 0} であるという。
+\end{defn}
+
+\begin{prop}
+  $f \colon X \to S$ を proper, flat, of finite presentation, geometrically reduced な scheme の射とする。このとき、$f$ は cohomologically flat in dimension 0 である。
+\end{prop}
+\begin{proof}
+  EGA III, Proposition 7.8.6 を参照されたい。
+\end{proof}
+
+\begin{prop}\label{Prop:EGAIII_7.7.6}
+  $f \colon X \to S$ を proper, of finite presentation な scheme の射とする。また、$\modF$ を $X$ 上 locally of finite presentation かつ $S$-flat な加群とする。このとき、ある $S$ 上 locally of finite presentation な $\O_S$-module $\mathcal{Q}$ が存在して、次の条件を充たす: 任意の quasi-coherent $\O_S$-module $\mathcal{M}$ に対して、functorial な同型
+  \[
+    f_*(\modF \otimes_{\O_X} f^*\mathcal{M}) \cong \HHom_{\O_S}(\mathcal{Q}, \mathcal{M})
+  \]
+  が成り立つ。また、このとき $\mathcal{Q}$ が locally free であることと、$\modF$ が cohomologically flat in dimension 0 であることは同値である。
+\end{prop}
+\begin{proof}
+  EGA III, Proposition 7.7.6, あるいは Mumford, ``Abelian Varieties", \S 5 などを参照されたい。
+\end{proof}
+
+$f \colon X \to S$ を proper, flat, of finite presentation な scheme の射とする。このとき、さきの命題より、ある locally of finite presentation な $\O_S$-module $\mathcal{Q}$ が存在して、任意の $S$-scheme $T$ に対して、$\GSec(X_T, \O_{X_T}) = \GSec(\HHom_{\O_S}(\mathcal{Q}, \O_T)) = \Hom_{\O_S}(\mathcal{Q}, \O_T) = \Hom_S(T, \Sym(\mathcal{Q}))$ が成り立つことが理解される。
+
+\begin{note}
+  $f$ が proper, of finite presentation な scheme の射であったとして、このとき、$f$ が finite ならば、明らかに $f$ は cohomologically flat in dimension 0 である。
+\end{note}
+
+\begin{prop}
+  $f \colon X \to S$ を proper, flat, of finite presentation な scheme の射とする。また、$Y \subset X$ なる subscheme を $S$ 上 finite, flat, of finite presentation であるとする。このとき、$V_X$, $V_Y$ を、それぞれ $T \mapsto \GSec(X_T, \O_{X_T})$, $T \mapsto \GSec(Y_T, \O_{Y_T})$ なる関手の表現対象とする。このとき、以下は同値である:
+  \begin{enumerate}
+      \item $Y$ は $f$ についての rigidificatorである。
+      \item $V_X \to V_Y$ なる (自然に誘導される) 射が closed immersion である。
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  $\mathcal{Q}_X$, $\mathcal{Q}_Y$ をそれぞれ $X$, $Y$ について命題 \ref{Prop:EGAIII_7.7.6} の方法で得られる $\O_S$-module とする。このとき、$\mathcal{Q}_X$, $\mathcal{Q}_Y$ の定義より、$\mathcal{O}_Y \to \mathcal{O}_X$ なる自然な加群の射が得られる。この観点において、命題は明らかとなる。
+\end{proof}
+
+\begin{prop}
+  $f \colon X \to S$ を proper, flat, of finite presentation な scheme の射とする。また、$V$ を $T \mapsto \GSec(X_T, \O_{X_T})$ なる関手の表現対象とする。このとき、$S$-scheme $T$ に対して $\GSec(X_T, \O_{X_T}^\times)$ を充てる関手は $V$ の open subscheme $V^*$ によって表現される。
+\end{prop}
+\begin{proof}
+  functor の inclusion が open immersion となっていることを確認すればよいが、これは $f$ が proper であることを思い出せば、ただちに従う。
+\end{proof}
+
+ここで、$S$-scheme $T$ に対して、自然な射 $\GSec(T, \O_T) \to \GSec(X \times_S T, \O_{X \times_S T})$ が存在することから、$\GaS \to V$ なる環スキームの射が存在することが理解される。また、同様に $\GmS \to V^*$ なる群スキームの射も存在することが理解される。
+
+\begin{prop}\label{Prop:Rigid_vs_Natural_Pic}
+  $f \colon X \to S$ を proper, flat, of finite presentation な scheme の射とする。また、$Y$ を $f$ についての rigidificator とする。このとき、次の自然な系列は \'{e}tale topology のもとで完全となる: \[0 \to V_X^* \to V_Y^* \to \RPic_{X / S, Y} \to \Pic_{X / S} \to 0.\]
+\end{prop}
+\begin{proof}
+  まず、$\RPic_{X / S, Y} \to \Pic_{X / S}$ の surjectivity を確認する。このためには、rigidificator $Y$ が与えられたとき、\text{\'etale} locally に rigidification が可能であることをみればよい。これはすなわち、$\Pic_{X / S}(T)$ の元が $T$ 上 \text{\'etale}-local に line bundle によって表示されればよい - このことは、$\H^2_{\text{\'etale}}(S, \GmS) = \H^2_{\text{fppf}}(S, \GmS)$ なる等号をもちいて確認できる。これは、Milne, ``Etale Cohomology'', Theorem III.3.9 を参照されたい。
+\end{proof}
+
+\subsection{Mumford による反例}
+$S = \Spec \Real[[t]]$ として、また $X$ を $\P^2_S = \Proj \Real[[t]][x_0, x_1, x_2]$ の closed subscheme であって、$x_1^2 + x_2^2 = tx_0^2$ なる方程式によって切り出されるものとする。このとき、$\Pic_{X / S}$ が scheme によって表現されないことを示す。
+
+$S' = \Spec \Cpx[[t]]$ として、$\mathrm{Pic}_{X / S}$ を $S'$ に引き戻したものは、次のようなスキームで表現される: $d \in \mathbb{Z}$ に対して、次の方法で得られるスキームを $P^d$ と表記する。$a + b = d$ なる整数の組 $a$, $b$ に対して、$S'$ の copy $S'_{a, b}$ を用意し、これらを生成点のもとで貼り合わせる。このとき、$P := \coprod_{d \in \Int} P^d$ は $\Pic_{X / S}|_{S'}$ の表現対象となる。また、自然に定まる Galois action は、$S'_{a, b}$ と $S'_{b, a}$ を入れ替える方法で得られるため、明らかに $P$ 上の Galois action は、その群作用によって安定的な affine 開集合による基底をもたない。したがって、特に $\Pic_{X / S}$ は scheme によって表現されない。
+
+\subsection{scheme による表現可能性}
+Grothendieck による次の定理は、Picard functor の scheme による表現可能性についての結果として重要なものである。
+
+\begin{thm}\label{Thm:Picard_scheme}
+  $f \colon X \to S$ を projective, flat, of finite presentation, geometrically integral とする。このとき、$\Pic_{X / S}$ は separated, locally of finite presentation な $S$-scheme によって表現される。
+\end{thm}
+
+定理 \ref{Thm:Picard_scheme} は、多くの射影幾何的な方法をもちいて理解される。そのため、``projective" なる仮定は不可避的に要求される。以下、定理 \ref{Thm:Picard_scheme} の証明をおこなっていく。
+
+定理 \ref{Thm:Picard_scheme} を示すにあたって、$S$ は affine としてもよいため、以下そのように仮定する。
+
+\begin{defn}
+  $f \colon X \to S$ なる scheme の射が \textbf{strongly projective} (resp. \textbf{strongly quasi-projective}) であるとは、次の条件を充たすことをいう: of finitely presentation であり、かつ $S$ 上の locally free sheaf $\E$ が存在して、$X$ が $S$-scheme として $\P(\E)$ の closed subscheme (resp. subscheme) として実現される。このような埋め込みを固定した文脈において、$\O_X(1)$ とは、$\P(\E)$ 上の (標準的な hyperplane line bundle であるところの) $\O_{\P(\E)}(1)$ の $X$ への制限をいう。
+\end{defn}
+
+$f \colon X \to S$ が strongly projective であるとき、さらにその witness としての射影埋め込みを固定した状況において、多項式 $\Phi \in \Rat[t]$ が与えられる毎に、$\Pic_{X / S}^\Phi$ なる $\Pic{X / S}$ の clopen subfunctor を次のように定義できる: $\O_X(1)$ に関する Hilbert polynomial が $\Phi$ であるような line bundle の同型類全体を充てる関手とする。このとき、$\Pic_{X / S}^\Phi$ が $S$-scheme によって表現されることが示せればよい。
+
+証明は、次のような方法で進行する: 適切な意味で「因子」を統べる、$\Div_{X / S}$ なる関手を導入し、$\Div \to \Pic$ なる自然な射を導入する。簡単な (線形系に関する) 観察により、この射が relatively representable であることが確認できる。次に、$\Div$ が表現対象をもつことをみる。最後に、$\Pic$ を $\Div$ の適切な quotient として表現できることを観察し、これが scheme によって表現可能であることをみる。
+
+\subsubsection{関手 $\Div_{X / S}$}
+
+divisor の概念を relative な状況で導入するにあたって、relative divisor の概念を導入する。
+
+\begin{defn}
+  $f \colon X \to S$ を locally of finite presentation な scheme の射とする。このとき、$X / S$ 上の \textbf{effective relative divisor} とは、$X$ の effective divisor $D$ であって、$D$ が $S$ 上 flat であるようなものをいう。
+\end{defn}
+
+以下の命題は flatness に関する local criterion により示される。
+
+\begin{prop}
+  $\mathcal{I}$ を $X$ 上の quasi-coherent ideal sheafとする。また、$D$ を $\mathcal{I}$ によって定義される $X$ の closed subschemeとする。また、$x \in D$, $s = f(x)$ なる点をとる。このとき、以下は同値である:
+  \begin{enumerate}
+    \item $\mathcal{I}$ は $x$ において可逆であり、かつ $S$ 上 flat である。
+    \item $X$, $D$ は $x$ において $S$ 上 flat であり、また fiber $D_s$ は $X_s$ 上の effective divisor である。
+    \item $X$ は $S$ 上 flat であり、かつ $x$ において $D$ はある元 $f$ によって定義され、さらに $f$ が $X_s$ 上で regular であるようにできる。
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  証明は local criterion for flatness に依る - scheme 論の簡単な exercise である。
+\end{proof}
+
+ここまでの準備のもとに、$\Div_{X / S}$ なる関手を次のように定義する: $S$-scheme $T$ に対して、$\Div_{X / S}(T)$ として $X \times_S T / T$ 上の effective relative divisor 全体のなすアーベル群を充てる。このとき、因子 $D$ を line bundle $\O_X(D)$ に充てる方法で、\[ \Div_{X / S} \to \Pic_{X / S} \] なる自然な射が存在することが理解される。
+
+
+%%% 命題の仮定をいくつか外したほうがいい。
+
+\begin{prop}[$\Div$ vs. $\Pic$]\label{Prop:Rel_Rep_Div_to_Pic}
+  $f \colon X \to S$ を strongly projective, flat, geometrically integral な scheme の射とする。このとき、自然な射 $\Div_{X / S} \to \Pic_{X / S}$ は、scheme によって representable である。さらにいえば、$T \to \Pic_{X / S}$ を line bundle $\L$ に対応する射とするとき、ある (``canonical" な方法で構成できる) locally of finite presentation な $\O_T$-module $\modF$ が存在して、$\Div_{X / S} \times_{\Pic_{X / S}} T \cong \P(\modF)$ なる自然な同型を得られる。さらに、$\L$ が cohomologically flat in dimension 0 であるとき、$\modF$, $f_*(\L)$ は locally free であり、これらは互いに dual の関係にある。
+\end{prop}
+\begin{proof}
+  
+\end{proof}
+
+\subsubsection{$\Div_{X / S}$ の表現可能性}
+
+foo
+
+\subsubsection{$\Pic_{X / S}$ の表現可能性}
+
+bar
+
+
+\subsection{algebraic space による表現可能性}
